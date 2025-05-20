@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="382.0" prefWidth="415.0" style="-fx-background-color: #f0f0f0;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.IncomingCallController">
+
+    <VBox layoutX="7.0" layoutY="11.0" prefHeight="360" prefWidth="400" spacing="15" style="-fx-background-color: white; -fx-border-color: #eb8c1e; -fx-border-width: 3; -fx-border-radius: 10; -fx-background-radius: 10;" AnchorPane.leftAnchor="7.0" AnchorPane.topAnchor="11.0">
+
+        <!-- 상단 제목 -->
+        <Label fx:id="incomingCallLabel" prefHeight="37.0" prefWidth="374.0" style="-fx-text-fill: #333;" text="신고 전화 수신" textAlignment="CENTER">
+            <VBox.margin>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </VBox.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
+        </Label>
+
+        <!-- 신고자 번호 -->
+        <Label fx:id="incomingTeleLabel" style="-fx-padding: 0 0 0 10;" text="010-8888-7777" />
+      <Text fx:id="reportHistoryText" strokeType="OUTSIDE" strokeWidth="0.0" text=" 이전 신고 내역" textAlignment="CENTER" wrappingWidth="98.03515625">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Text>
+
+        <!-- 테이블 -->
+        <TableView prefHeight="149.0" prefWidth="394.0" style="-fx-focus-traversable: false;" stylesheets="@style.css">
+            <columns>
+                <TableColumn prefWidth="108.79999107122421" text="날짜" />
+                <TableColumn prefWidth="142.3999786376953" text="신고 유형" />
+                <TableColumn prefWidth="143.19993591308594" text="처리 결과" />
+            </columns>
+        </TableView>
+
+        <!-- 통화 수락 버튼 -->
+        <HBox alignment="CENTER_RIGHT" prefHeight="52.0" prefWidth="394.0">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <Button fx:id="acceptCallButton" onAction="#onActionCall" prefHeight="35.0" prefWidth="89.0" style="-fx-background-color: #a4eaa4; -fx-background-radius: 10; -fx-font-weight: bold;" stylesheets="@style.css" text="통화 수락">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+            <effect>
+               <DropShadow spread="0.2" />
+            </effect></Button>
+        </HBox>
+    </VBox>
+</AnchorPane>
