@@ -7,10 +7,15 @@ USE emergency_system;
 
 -- 2. 사용자 정보 테이블 생성
 CREATE TABLE IF NOT EXISTS users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(50) NOT NULL,
-    password VARCHAR(50) NOT NULL,
-    name VARCHAR(50) NOT NULL
+    id INT NOT NULL AUTO_INCREMENT,
+    user_ID VARCHAR(20) NOT NULL,
+    user_name VARCHAR(15) NOT NULL,
+    password VARCHAR(40) NOT NULL,
+    user_phone VARCHAR(15) NOT NULL,
+    birth_date DATE NULL,
+    profile_image VARCHAR(225) NOT NULL,
+    PRIMARY KEY (id),
+    UNIQUE INDEX username_UNIQUE (user_ID ASC) VISIBLE
 );
 
 -- 3. 로그인 가능한 예시 사용자 추가
