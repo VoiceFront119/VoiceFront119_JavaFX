@@ -21,6 +21,7 @@ import java.util.Map;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -180,6 +181,18 @@ public class SavedReportController {
             showAlert(Alert.AlertType.ERROR, "조회 실패", "데이터를 불러오는 중 오류가 발생했습니다.");
         }
      }
+    
+    // 수정 버튼 클릭 시 텍스트 영역을 수정 가능하게 만들고 스타일 변경
+    @FXML
+    private void onEditButtonClick(ActionEvent event) {
+    	
+    	summaryTextArea.setEditable(true);
+    	summaryTextArea.setStyle("-fx-control-inner-background: #ffffff; -fx-text-fill: black;");
+    	
+    	memoTextArea.setEditable(true);
+    	memoTextArea.setStyle("-fx-control-inner-background: #ffffff; -fx-text-fill: black;");
+    	
+    }
     
     @FXML
     private void saveReportToDB() {

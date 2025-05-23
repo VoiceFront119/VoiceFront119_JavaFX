@@ -47,7 +47,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #eb8c1e;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SavedReportController">
    <children>
-      <TextArea fx:id="dialogueTextArea" editable="false" layoutX="155.0" layoutY="221.0" prefHeight="251.0" prefWidth="500.0" promptText="통화 내용 텍스트" style="-fx-focus-traversable: false;" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="15.0">
+      <TextArea fx:id="dialogueTextArea" editable="false" layoutX="155.0" layoutY="221.0" prefHeight="251.0" prefWidth="500.0" promptText="통화 내용 텍스트" style="-fx-focus-traversable: false; -fx-background-color: #aeaeae;" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="15.0">
          <cursor>
             <Cursor fx:constant="NONE" />
          </cursor></TextArea>
@@ -105,7 +105,7 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button fx:id="editButton1" layoutX="85.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="70.0" text="수정" AnchorPane.topAnchor="0.0">
+            <Button fx:id="editButton" onAction="#onEditButtonClick" layoutX="85.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="70.0" text="수정" AnchorPane.topAnchor="0.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

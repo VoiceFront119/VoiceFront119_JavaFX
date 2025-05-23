@@ -116,6 +116,12 @@
     -fx-border-color: transparent;
 }
 
+.text-area {
+    -fx-text-fill: black;          /* 글자색 */
+    -fx-control-inner-background: #e1e1e1; /* 실제 입력창 배경 */
+}
+
+
 
 
 
