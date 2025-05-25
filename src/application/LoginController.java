@@ -33,27 +33,34 @@ public class LoginController {
         String inputPw = passwordText.getText();
 
         // DB에서 사용자 인증 (비밀번호 다름)
-        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/emergency_system", "root", "pl,ko0987");
-             PreparedStatement stmt = conn.prepareStatement("SELECT * FROM users WHERE username = ? AND password = ?")) {
+        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/emergency_system", "root", "1234");
+             PreparedStatement stmt = conn.prepareStatement("SELECT * FROM users WHERE user_ID = ? AND password = ?")) {
 
             stmt.setString(1, inputId);
             stmt.setString(2, inputPw);
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
-                // 로그인 성공 시 → 메인 페이지로 이동
-                Parent root = FXMLLoader.load(getClass().getResource("main_page.fxml"));
-                Stage stage1 = (Stage) ((Button) event.getSource()).getScene().getWindow();
+                // user_name 가져오기
+                String userName = rs.getString("user_name");
 
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("main_page.fxml"));
+                Parent root = loader.load();
+
+                // 컨트롤러 인스턴스 가져와서 이름 전달
+                MainController mainController = loader.getController();
+                mainController.setLoggedInUserName(userName);  // 사용자 이름 전달
+                mainController.setCurrentUserId(inputId); // id도 전달 (마이페이지 불러오기용)
+
+                Stage stage1 = (Stage) ((Button) event.getSource()).getScene().getWindow();
                 stage1.setScene(new Scene(root));
                 stage1.setTitle("VoiceFront119 - 메인 페이지");
 
                 Image image = new Image(getClass().getResource("/images/119 Logo-01.png").toExternalForm());
                 stage1.getIcons().add(image);
-
                 stage1.show();
-                
-            } else {
+            }
+            else {
                 // 로그인 실패
                 showAlert("로그인 실패", "아이디 또는 비밀번호가 잘못되었습니다.");
             }
@@ -63,7 +70,25 @@ public class LoginController {
             showAlert("에러 발생", "로그인 처리 중 문제가 발생했습니다.");
         }
     }
+    
+    @FXML
+    private void openSigninPage(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("signin_page.fxml"));
+            Parent root = loader.load();
 
+            Stage signupStage = new Stage();
+            signupStage.setTitle("회원가입");
+            signupStage.setScene(new Scene(root));
+            signupStage.getIcons().add(new Image(getClass().getResource("/images/119 Logo-01.png").toExternalForm()));
+            signupStage.show();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            showAlert("오류", "회원가입 창을 여는 데 실패했습니다.");
+        }
+    }
+    
     // 알림창
     private void showAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);

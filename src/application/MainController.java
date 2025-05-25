@@ -9,7 +9,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
+
 
 import java.io.IOException;
 
@@ -22,10 +24,18 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.Label;	
 import javafx.scene.control.ListView;
+import javafx.scene.control.RadioButton;
 import javafx.beans.property.SimpleStringProperty;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
 
 
 public class MainController {
@@ -33,7 +43,11 @@ public class MainController {
     @FXML private Text nameText;   // 사용자 이름
     @FXML private Text affiliationText;   // 소속
     @FXML private Text priorityTitleText;  // 우선순위 리스트 설명 텍스트
-//    @FXML private TextField searchText;  // 검색 텍스트
+    @FXML private TextField searchText;  // 검색 텍스트
+    @FXML private RadioButton caseNumRadio;
+    @FXML private RadioButton addressRadio;
+    @FXML private RadioButton typeRadio;
+
    
     
 	// 접수 목록
@@ -59,9 +73,203 @@ public class MainController {
     double tableViewY = 200;   // 테이블 뷰 Y 좌표 (고정값 175)
     private Stage stage2;  // 창
     
+    // 메인 페이지 사용자 이름 표시
+    public void setLoggedInUserName(String userName) {
+        nameText.setText(userName + " 님");
+    }
+    
+    // 마이페이지 id 가져오는 부분
+    private String currentUserId;
+    public void setCurrentUserId(String userId) {
+        this.currentUserId = userId;
+    }
+    
+    @FXML
+    private void onDetailButtonClicked() {
+        try {
+            // FXML 로드
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("saved_report_page.fxml"));
+            Parent root = loader.load();
+
+            // 컨트롤러 인스턴스 가져오기
+            SavedReportController controller = loader.getController();
+
+            // 현재 선택된 신고 내역에서 필요한 정보 추출
+            Reception selectedReception = receptionTableView.getSelectionModel().getSelectedItem();
+            if (selectedReception == null) {
+                showAlert("선택 오류", "상세보기를 위해 신고 내역을 선택하세요.");
+                return;
+            }
+
+            // 예시로 전화번호 넘기기 (Controller에서 실제 사용 가능)
+            String phone = selectedReception.getPhoneNumber();  // Reception 클래스에 getPhoneNumber()가 있다고 가정
+            if (phone != null) {
+                controller.loadHistoryByPhoneNumber(phone);
+            }
+
+            // 상세보기 창 열기
+            Stage stage = new Stage();
+            stage.setTitle("신고 상세보기");
+            stage.setScene(new Scene(root));
+            stage.getIcons().add(new Image(getClass().getResource("/images/119 Logo-01.png").toExternalForm()));
+            stage.show();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            showAlert("오류", "상세보기 화면을 여는 중 문제가 발생했습니다.");
+        }
+    }
+
+    
+	@FXML
+	private void onSearchClicked(ActionEvent event) {
+	    String searchValue = searchText.getText().trim();
+	    if (searchValue.isEmpty()) {
+	    	dataList.clear();
+	    	loadDataFromDatabase();  // 전체 데이터 로드
+	        return;
+	    }
+	
+	    String column = "";
+	    if (caseNumRadio.isSelected()) {
+	        column = "id";
+	    } else if (addressRadio.isSelected()) {
+	        column = "address";
+	    } else if (typeRadio.isSelected()) {
+	        column = "accident_type";  // 너가 말한 사고유형 = accident_type
+	    } else {
+	        showAlert("선택 오류", "검색 기준을 선택해주세요.");
+	        return;
+	    }
+	
+	    String query = "SELECT * FROM reports WHERE " + column + " LIKE ?";
+	    dataList.clear();
+	
+	    try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/emergency_system", "root", "1234");
+	         PreparedStatement stmt = conn.prepareStatement(query)) {
+	        
+	        stmt.setString(1, "%" + searchValue + "%");
+	        ResultSet rs = stmt.executeQuery();
+	
+	        while (rs.next()) {
+	            String fullTime = rs.getString("report_time");  // DATETIME or TIME
+	            String date = "2025-04-24";  // 혹시라도 필요하면 상수 또는 split로 대체
+	            String time = fullTime;
+
+	            Reception reception = new Reception(
+	                String.valueOf(rs.getInt("id")),
+	                date,
+	                time,
+	                rs.getString("address"),
+	                splitCategory(rs.getString("accident_type"))[0],
+	                splitCategory(rs.getString("accident_type"))[1],
+	                rs.getString("urgency_level"),
+	                "처리중"  // 고정 텍스트 또는 다른 로직으로 대체
+	            );
+	            dataList.add(reception);
+	        }
+
+	
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        showAlert("DB 오류", "검색 중 오류 발생");
+	    }
+	}
+
+	private String[] splitCategory(String full) {
+        if (full.contains("-")) return full.split("-", 2);
+        else if (full.contains("(")) {
+            String main = full.substring(full.indexOf("(") + 1, full.indexOf(")"));
+            String sub = full.substring(0, full.indexOf("("));
+            return new String[]{main, sub};
+        }
+        return new String[]{"기타", full};
+    }
+
+    
+    @FXML
+    private void onReceiveCall(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("incoming_call_page.fxml"));
+            Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
+
+            stage.setScene(new Scene(root));
+            stage.setTitle("VoiceFront119 - 신고 전화 수신");
+
+            Image image = new Image(getClass().getResource("/images/119 Logo-01.png").toExternalForm());
+            stage.getIcons().add(image);
+
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    
+    private void loadDataFromDatabase() {
+        String query = "SELECT * FROM reports";
+
+        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/emergency_system", "root", "1234");
+             PreparedStatement stmt = conn.prepareStatement(query);
+             ResultSet rs = stmt.executeQuery()) {
+
+            while (rs.next()) {
+                String id = String.format("%03d", rs.getInt("id"));
+                
+                String[] timeParts = rs.getString("report_time").split(" ");
+                String date = timeParts[0];
+                String time = timeParts[1];
+                
+                String address = rs.getString("address");
+
+                String accidentType = rs.getString("accident_type");
+                String[] typeParts = accidentType.split(" - ");
+                String major = typeParts.length > 0 ? typeParts[0] : "";
+                String sub = typeParts.length > 1 ? typeParts[1] : "";
+
+                String urgency = rs.getString("urgency_level");
+
+                Reception reception = new Reception(id, date, time, address, major, sub, urgency);
+                dataList.add(reception);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    // 마이페이지 여는 버튼
+    @FXML
+    private void openMypage(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("mypage.fxml"));
+            Parent root = loader.load();
+
+            MypageController controller = loader.getController();
+            controller.setUserData(currentUserId);
+
+            Stage stage = new Stage();
+            stage.setTitle("마이페이지");
+            stage.setScene(new Scene(root));
+            stage.getIcons().add(new Image(getClass().getResource("/images/119 Logo-01.png").toExternalForm()));
+            stage.show();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    
+    
     // 초기화 메서드
     @FXML
     public void initialize() {
+    	
+    	// 검색 그룹 중복 안되게끔
+        ToggleGroup searchGroup = new ToggleGroup();
+        caseNumRadio.setToggleGroup(searchGroup);
+        addressRadio.setToggleGroup(searchGroup);
+        typeRadio.setToggleGroup(searchGroup);
     	// 폰트 설정
     	Font TheJamsil2 = Font.loadFont(getClass().getResource("/fonts/TheJamsil2Light.ttf").toExternalForm(), 15);
     	Font TheJamsil3 = Font.loadFont(getClass().getResource("/fonts/TheJamsil3Regular.ttf").toExternalForm(), 15);
@@ -90,14 +298,18 @@ public class MainController {
 
         // TableView에 데이터 리스트 설정
         receptionTableView.setItems(dataList);
-
+        
+        /*
         // 초기 예시 데이터 추가 (DB에서 가져오는 걸로 바꿔야 함)
         dataList.add(new Reception("005", "2025-03-25", "14:08:21", "서울특별시 도봉구 방학동", "기타", "기타", "하", "처리중"));
         dataList.add(new Reception("004", "2025-03-25", "13:50:14", "서울특별시 강동구 둔촌동", "화재", "일반화재", "상", "처리중"));
         dataList.add(new Reception("003", "2025-03-25", "12:12:43", "서울특별시 성북구 정릉동", "구급", "질병(중증 외)", "중", "처리완료"));
         dataList.add(new Reception("002", "2025-03-25", "11:10:02", "서울특별시 송파구 마천동", "구조", "안전사고", "하", "처리완료"));
         dataList.add(new Reception("001", "2025-03-25", "11:46:58", "서울특별시 노원구 상계동", "구조", "기타구조", "하", "처리완료"));
+        */
         
+        loadDataFromDatabase();
+
         
 	    // 행 클릭 시 상세정보 창 펼치기
         receptionTableView.setRowFactory(tv -> {
@@ -136,6 +348,16 @@ public class MainController {
         updatePriorityList();
 	}
     
+    // 알림창 표시용 메서드
+    private void showAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
+    
     // 전화 신고 수신 페이지 로드 (현재는 검색 버튼 클릭시)
     @FXML
 	private void openincomingcallpage(ActionEvent event) {
@@ -173,11 +395,9 @@ public class MainController {
         		+ "사고 유형 : %s - %s\n"
         		+ "긴급도 : %s\n"
         		+ "처리 결과 : 현장 확인 후 위험 요소 제거\n"
-        		+ "연락처 : 010 - 1234 - 5678\n"
-        		+ "\'20231112/Seoul/2022/20221220/converted_[20221220]-[WZ1141328391].wav\'",
-                reception.getCaseNumber(), reception.getDate(), reception.getTime(), reception.getAddress(),
-                reception.getMajorCategory(), reception.getSubCategory(), reception.getUrgency());
-
+        		+ "연락처 : 010 - 1234 - 5678\n"        		,
+        	    reception.getCaseNumber(), reception.getDate(), reception.getTime(), reception.getAddress(),
+        	    reception.getMajorCategory(), reception.getSubCategory(), reception.getUrgency());
         // 상세 정보 라벨에 내용 설정
         detailLabel.setText(detailText);
     }

@@ -54,6 +54,14 @@ public class Reception {
              "", "", "", "", "", "", "");
     }
     
+ // 검색용: 처리현황 없이 7개 필드만 받는 생성자
+    public Reception(String caseNum, String date, String time, String address,
+                     String majorCategory, String subCategory, String urgency) {
+        this(caseNum, date, time, address, majorCategory, subCategory, urgency, "",
+             "", "", "", "", "");
+    }
+
+    
     // 내용 비교
     @Override
     public boolean equals(Object obj) {
