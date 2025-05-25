@@ -34,7 +34,7 @@ public class LoginController {
 
         // DB에서 사용자 인증 (비밀번호 다름)
         try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/emergency_system", "root", "pl,ko0987");
-             PreparedStatement stmt = conn.prepareStatement("SELECT * FROM users WHERE username = ? AND password = ?")) {
+             PreparedStatement stmt = conn.prepareStatement("SELECT * FROM users WHERE user_ID = ? AND password = ?")) {
 
             stmt.setString(1, inputId);
             stmt.setString(2, inputPw);
@@ -61,6 +61,22 @@ public class LoginController {
         } catch (Exception e) {
             e.printStackTrace();
             showAlert("에러 발생", "로그인 처리 중 문제가 발생했습니다.");
+        }
+    }
+    private void openSigninPage(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("signin_page.fxml"));
+            Parent root = loader.load();
+
+            Stage signupStage = new Stage();
+            signupStage.setTitle("회원가입");
+            signupStage.setScene(new Scene(root));
+            signupStage.getIcons().add(new Image(getClass().getResource("/images/119 Logo-01.png").toExternalForm()));
+            signupStage.show();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            showAlert("오류", "회원가입 창을 여는 데 실패했습니다.");
         }
     }
 
