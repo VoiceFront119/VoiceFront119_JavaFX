@@ -7,6 +7,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.sql.*;
 import java.time.LocalDate;
 
@@ -44,7 +45,6 @@ public class SigninController {
         String password = passwordField.getText();
         String confirmPassword = confirmPasswordField.getText();
         LocalDate birthDate = birthDatePicker.getValue();
-        String profilePath = selectedImageFile != null ? selectedImageFile.getAbsolutePath() : null;
 
         if (userId.isEmpty() || userName.isEmpty() || userPhone.isEmpty() || password.isEmpty()) {
             showError("모든 필드를 입력해주세요.");
@@ -78,18 +78,28 @@ public class SigninController {
 
             stmt.setString(1, userId);
             stmt.setString(2, userName);
-            stmt.setString(3, password); // 암호화 없이 저장
+            stmt.setString(3, password);
             stmt.setString(4, userPhone);
             stmt.setDate(5, birthDate != null ? Date.valueOf(birthDate) : null);
-            stmt.setString(6, profilePath);
 
-            stmt.executeUpdate();
+            if (selectedImageFile != null) {
+                try (FileInputStream fis = new FileInputStream(selectedImageFile)) {
+                    stmt.setBinaryStream(6, fis, (int) selectedImageFile.length()); 
+                    stmt.executeUpdate();
+                }
+            } else {
+                stmt.setNull(6, java.sql.Types.BLOB);
+                stmt.executeUpdate();
+            }
+
             errorLabel.setText("회원가입 성공!");
             errorLabel.setStyle("-fx-text-fill: green;");
             errorLabel.setVisible(true);
 
         } catch (SQLException e) {
             showError("DB 오류: " + e.getMessage());
+        } catch (Exception e) {
+            showError("파일 오류: " + e.getMessage());
         }
     }
 
@@ -106,7 +116,7 @@ public class SigninController {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return true;
+        return true; // 오류 시 중복으로 간주
     }
 
     private void showError(String message) {
