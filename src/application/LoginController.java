@@ -41,10 +41,12 @@ public class LoginController {
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
-                // 로그인 성공 시 → 메인 페이지로 이동
-                Parent root = FXMLLoader.load(getClass().getResource("main_page.fxml"));
-                Stage stage1 = (Stage) ((Button) event.getSource()).getScene().getWindow();
-
+                // 로그인 성공 시 → 메인 페이지로 이동 + 로그인 정보 이동
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("main_page.fxml"));
+                Parent root = loader.load();  
+                MainController controller = loader.getController();
+                controller.setUserData(inputId);
+                
                 stage1.setScene(new Scene(root));
                 stage1.setTitle("VoiceFront119 - 메인 페이지");
 
