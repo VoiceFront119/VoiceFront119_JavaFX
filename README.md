@@ -66,3 +66,18 @@
 - 기술스택 : Tensorflow, Pytorch, Whisper-medium, GPT-4 Turbo
 <br><br><br>
 ---
+## API
+### 기능
+1. 음성 - 텍스트 변환
+
+WAV 파일 전송 → 변환된 텍스트 반환
+
+2. 긴급도 분류
+
+신고 텍스트 전문 → 상중하 중 한 가지로 반환
+
+3. GPT 요약 및 분석
+
+신고 텍스트 전문 → GPT-4 turbo가 요약한 내용 반환
+
+
