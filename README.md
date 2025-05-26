@@ -59,13 +59,7 @@
 <br><br><br>
 
 ---
-## 🖥️ 시스템 구성 및 기술 스택
-- 개발환경 : Windows OS, JavaFX, MySQL
-- 개발언어 : Python, Java
-- 개발도구 : Colab pro, PyCharm, Eclipse, Scene Builder, MySQL Workbench
-- 기술스택 : Tensorflow, Pytorch, Whisper-medium, GPT-4 Turbo
-<br><br><br>
----
+
 ## API
 ### 기능
 1. 음성 - 텍스트 변환
@@ -79,5 +73,11 @@ WAV 파일 전송 → 변환된 텍스트 반환
 3. GPT 요약 및 분석
 
 신고 텍스트 전문 → GPT-4 turbo가 요약한 내용 반환
-
+<br><br><br>
+---
+## 🖥️ 시스템 구성 및 기술 스택
+- 개발환경 : Windows OS, JavaFX, MySQL
+- 개발언어 : Python, Java
+- 개발도구 : Colab pro, PyCharm, Eclipse, Scene Builder, MySQL Workbench
+- 기술스택 : Tensorflow, Pytorch, Whisper-medium, GPT-4 Turbo
 
