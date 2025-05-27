@@ -62,13 +62,12 @@ public class SavedReportController {
     // 테이블뷰
     @FXML private TableView<Reception> reportHistoryTableView;
     @FXML private TableColumn<Reception, String> historyDateColumn;
-    @FXML private TableColumn<Reception, String> historyTimeColumn;
+    @FXML private TableColumn<Reception, String> historyReporterColumn;
     @FXML private TableColumn<Reception, String> historyTypeColumn;
     
     private ObservableList<Reception> dataList = FXCollections.observableArrayList();
     
     private Connection connection; // 전역 DB 연결 객체
-    private LocalDateTime callStartTime; // 통화 시작 시간
     private String majorCategory;  // 선택한 대분류
     private String subCategory;  // 선택한 중분류
     private Map<String, List<String>> categoryToTypes = new HashMap<>();  // 대분류에 맞는 중분류만 선택할 수 있도록하기 위한
@@ -82,9 +81,9 @@ public class SavedReportController {
     private String duration;
     private String summary;
     private String memo;
-//    private String accidentType;
     private String callDuration;
     private String result;
+    private String reporter;
     
     // 접수 번호 받아오기
     public void setCaseId(Integer caseId) {
@@ -110,6 +109,7 @@ public class SavedReportController {
                 memo = rs.getString("memo");
                 callDuration = rs.getString("call_duration");
                 result = rs.getString("processing_result");
+                reporter = rs.getString("reporter");
                 
                 String accidentType = rs.getString("accident_type");
                 String[] typeParts = accidentType.split(" - ");
@@ -141,6 +141,14 @@ public class SavedReportController {
                 historySummaryTextArea.setText(summary);
                 historyMemoTextArea.setText(memo);
                 resultTextArea.setText(result);
+                
+                // 동일한 전화번호로 접수된 이전 신고 내역
+                historyDateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
+                historyReporterColumn.setCellValueFactory(new PropertyValueFactory<>("reporter"));
+                historyTypeColumn.setCellValueFactory(new PropertyValueFactory<>("subCategory"));
+                
+                loadHistoryByPhoneNumber(phoneNum);
+                reportHistoryTableView.setItems(dataList);
 
                 // 콤보박스 설정
                 categoryComboBox.setValue(majorCategory);
@@ -176,23 +184,6 @@ public class SavedReportController {
             e.printStackTrace();
             showAlert(Alert.AlertType.ERROR, "DB 연결 실패", "데이터베이스 연결 중 오류가 발생했습니다.");
         }
-        
-        // 신고자 번호 및 시간 관련 정보 출력
-        teleLabel.setText(String.format("신고자 번호: %s", AppConfig.INCOMING_PHONENUMBER));
-        LocalDate today = LocalDate.now();
-        dateLabel.setText("날짜: " + today.format(DateTimeFormatter.ISO_DATE));
-        callStartTime = LocalDateTime.now();
-        callStartTimeLabel.setText("통화 시작 시간: " + callStartTime.format(DateTimeFormatter.ofPattern("HH:mm:ss")));
-        
-        
-        // 동일한 전화번호로 접수된 이전 신고 내역
-        historyDateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
-        historyTimeColumn.setCellValueFactory(new PropertyValueFactory<>("time"));
-        historyTypeColumn.setCellValueFactory(new PropertyValueFactory<>("subCategory"));
-        
-        String phoneNumber = teleLabel.getText().replace("신고자 번호: ", "").trim();
-        loadHistoryByPhoneNumber(phoneNumber);
-        reportHistoryTableView.setItems(dataList);
         
         // 사고 유형 고르기 (콤보박스 형태)
         categoryComboBox.setItems(FXCollections.observableArrayList("구조", "구급", "화재", "기타"));
@@ -236,15 +227,13 @@ public class SavedReportController {
     	// 데이터리스트 초기화
         dataList.clear();
 
-        String query = "SELECT report_date, report_time, accident_type FROM reports WHERE phone_number = ?";
+        String query = "SELECT report_date, accident_type, reporter FROM reports WHERE phone_number = ?";
 
         try (PreparedStatement pstmt = connection.prepareStatement(query)) {
             pstmt.setString(1, phoneNumber);
             ResultSet rs = pstmt.executeQuery();  // 쿼리 실행 결과
 
             while (rs.next()) {
-                String date = rs.getString("report_date");
-                String time = rs.getString("report_time");
                 String accident_type = rs.getString("accident_type");
                 
                 // accident_type('대분류-중분류') 대분류랑 중분류로 split
@@ -258,7 +247,7 @@ public class SavedReportController {
                 
                 // Reception 객체 생성
                 Reception reception = new Reception(
-                    null, date, time, "", historyMajorCategory, historySubCategory, "", "", "", "", "", "", ""
+                    null, date, "", "", historyMajorCategory, historySubCategory, "", "", "", "", "", "", reporter
                 );
 
                 dataList.add(reception);
