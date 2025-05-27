@@ -66,7 +66,6 @@ public class EmergencyCallController {
     // 테이블뷰
     @FXML private TableView<Reception> reportHistoryTableView;
     @FXML private TableColumn<Reception, String> historyDateColumn;
-    @FXML private TableColumn<Reception, String> historyTimeColumn;
     @FXML private TableColumn<Reception, String> historyTypeColumn;
     @FXML private TableColumn<Reception, String> historyReporterColumn;
     
@@ -119,7 +118,6 @@ public class EmergencyCallController {
         
         // 동일한 전화번호로 접수된 이전 신고 내역
         historyDateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
-        historyTimeColumn.setCellValueFactory(new PropertyValueFactory<>("time"));
         historyTypeColumn.setCellValueFactory(cellData -> cellData.getValue().accidentTypeCombinedProperty());
         historyReporterColumn.setCellValueFactory(new PropertyValueFactory<>("reporter"));
         
