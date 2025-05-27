@@ -1,0 +1,169 @@
+{
+    "_id": "651e4a1fb7503416e5f164f4",
+    "audioPath": "20230925/Seoul/2022/20220302/converted_[20220302]-[WQ1139586705].wav",
+    "recordId": "047204faefbc0216b249",
+    "status": 12,
+    "startAt": 0,
+    "endAt": 44520,
+    "utterances": [
+        {
+            "id": "27bb46ad",
+            "startAt": 117,
+            "endAt": 751,
+            "text": "119입니다. ",
+            "speaker": 0
+        },
+        {
+            "id": "f7634865",
+            "startAt": 1153,
+            "endAt": 5066,
+            "text": "아, 예. 안녕하세요. 여기 암사동인데요.",
+            "speaker": 1
+        },
+        {
+            "id": "032f0963",
+            "startAt": 5414,
+            "endAt": 7619,
+            "text": "아, 모친 돌아가신 거 같아 가지고.",
+            "speaker": 1
+        },
+        {
+            "id": "3385cc05",
+            "startAt": 7685,
+            "endAt": 8939,
+            "text": "어, 주소 알려주세요.",
+            "speaker": 0
+        },
+        {
+            "id": "88c6e450",
+            "startAt": 9395,
+            "endAt": 11394,
+            "text": "어 강동구.",
+            "speaker": 1
+        },
+        {
+            "id": "ecac1373",
+            "startAt": 11334,
+            "endAt": 13328,
+            "text": "암, 암사동.",
+            "speaker": 1
+        },
+        {
+            "id": "371271a7",
+            "startAt": 13682,
+            "endAt": 17421,
+            "text": "[개인정보]",
+            "speaker": 1
+        },
+        {
+            "id": "798afdd3",
+            "startAt": 17871,
+            "endAt": 20630,
+            "text": "예, 금성주택. 금성주택.",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_74h449qmhdg",
+            "startAt": 20628,
+            "endAt": 21646,
+            "text": "[개인정보]",
+            "speaker": 1
+        },
+        {
+            "id": "ba188dd1",
+            "startAt": 22135,
+            "endAt": 23436,
+            "text": "금성 주택이에요?",
+            "speaker": 0
+        },
+        {
+            "id": "267f2351",
+            "startAt": 23575,
+            "endAt": 24686,
+            "text": "예, 금성 주택.",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_jfbgd3avamo",
+            "startAt": 24665,
+            "endAt": 26265,
+            "text": "[개인정보]",
+            "speaker": 1
+        },
+        {
+            "id": "8f5e71f4",
+            "startAt": 26545,
+            "endAt": 28130,
+            "text": "[개인정보]",
+            "speaker": 0
+        },
+        {
+            "id": "7de1f9a8",
+            "startAt": 28236,
+            "endAt": 28885,
+            "text": "예.",
+            "speaker": 1
+        },
+        {
+            "id": "9b9e64d5",
+            "startAt": 29177,
+            "endAt": 30285,
+            "text": "[개인정보]",
+            "speaker": 0
+        },
+        {
+            "id": "wavesurfer_9a6qfk7hch",
+            "startAt": 30265,
+            "endAt": 31392,
+            "text": "어머니가 숨을 안 쉬어요?",
+            "speaker": 0
+        },
+        {
+            "id": "c2b7d524",
+            "startAt": 31571,
+            "endAt": 33063,
+            "text": "예. 숨은 안 쉬는거",
+            "speaker": 1
+        },
+        {
+            "id": "11d78298",
+            "startAt": 33045,
+            "endAt": 36502,
+            "text": "[개인정보]",
+            "speaker": 0
+        },
+        {
+            "id": "wavesurfer_dradqvos54o",
+            "startAt": 36474,
+            "endAt": 39629,
+            "text": "출동할 거고요. 응급처치 부서 좀 연결할게요.",
+            "speaker": 0
+        },
+        {
+            "id": "b28e70d8",
+            "startAt": 39780,
+            "endAt": 40669,
+            "text": "네.",
+            "speaker": 1
+        },
+        {
+            "id": "63fc96a6",
+            "startAt": 39797,
+            "endAt": 43580,
+            "text": "말씀 드리고 내용 좀 안내해주세요. 전화 끊지 마세요.",
+            "speaker": 0
+        }
+    ],
+    "mediaType": "Mobile",
+    "gender": "M",
+    "address": "서울특별시 강동구 암사동",
+    "disasterLarge": "구급",
+    "disasterMedium": "심정지",
+    "urgencyLevel": "상",
+    "sentiment": "불안/걱정",
+    "symptom": [
+        "심정지",
+        "호흡정지"
+    ],
+    "triage": "사망추정"
+}

@@ -1,0 +1,243 @@
+{
+    "_id": "651e4c8ad24efd3f59d01614",
+    "audioPath": "20230925/Seoul/2022/20220607/converted_[20220607]-[WT1140153255].wav",
+    "recordId": "18e6b4e8ee69fc65ad49",
+    "status": 12,
+    "startAt": 0,
+    "endAt": 67320,
+    "utterances": [
+        {
+            "id": "fb6888de",
+            "startAt": 215,
+            "endAt": 1885,
+            "text": "119입니다. 말씀하세요.",
+            "speaker": 0
+        },
+        {
+            "id": "6af0af81",
+            "startAt": 1840,
+            "endAt": 3170,
+            "text": "예, 여기 역삼동 ",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_0k7r2mbfcbg",
+            "startAt": 3200,
+            "endAt": 4710,
+            "text": "[개인정보]",
+            "speaker": 1
+        },
+        {
+            "id": "c5b78c69",
+            "startAt": 4728,
+            "endAt": 5408,
+            "text": "역삼동 ",
+            "speaker": 0
+        },
+        {
+            "id": "wavesurfer_j7762hdt75",
+            "startAt": 5424,
+            "endAt": 6634,
+            "text": "[개인정보]",
+            "speaker": 0
+        },
+        {
+            "id": "4f4830fd",
+            "startAt": 7495,
+            "endAt": 16747,
+            "text": "예, 예, 1층 애마보이라는 데서 탄 냄새가 자꾸만 나거든요. 근데 아직 불길은 안 보이긴 안 보이는데 뭐 타는 냄새가 나요.",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_05jqieqcdr",
+            "startAt": 11848,
+            "endAt": 12648,
+            "text": "거기",
+            "speaker": 0
+        },
+        {
+            "id": "60d41647",
+            "startAt": 16744,
+            "endAt": 18689,
+            "text": "총 몇 층 건물이에요? 선생님 여기가",
+            "speaker": 0
+        },
+        {
+            "id": "545a4adb",
+            "startAt": 18397,
+            "endAt": 20977,
+            "text": "1층이에요, 3층 건물에 1층에 있습니다.",
+            "speaker": 1
+        },
+        {
+            "id": "5fcc1c91",
+            "startAt": 20647,
+            "endAt": 22927,
+            "text": "총 3층 건물 중에 1층?",
+            "speaker": 0
+        },
+        {
+            "id": "7b9c3d04",
+            "startAt": 23397,
+            "endAt": 28007,
+            "text": "예, 예, 일단은 그 주인한테는 연락을 해놨는데 거리가 있어갖.",
+            "speaker": 1
+        },
+        {
+            "id": "f9109fd1",
+            "startAt": 26807,
+            "endAt": 29717,
+            "text": "1층에 어, 뭐 하는데요, 1층이?",
+            "speaker": 0
+        },
+        {
+            "id": "bfd5de78",
+            "startAt": 30128,
+            "endAt": 30988,
+            "text": "헤어요 헤어.",
+            "speaker": 1
+        },
+        {
+            "id": "ca157753",
+            "startAt": 31298,
+            "endAt": 32668,
+            "text": "헤어? 미용실?",
+            "speaker": 0
+        },
+        {
+            "id": "02d42427",
+            "startAt": 32268,
+            "endAt": 33648,
+            "text": "예 예, 예 예",
+            "speaker": 1
+        },
+        {
+            "id": "538223e5",
+            "startAt": 33708,
+            "endAt": 36008,
+            "text": "뭐 불꽃이나 연기는 아직 안 보이신다는 거죠? ",
+            "speaker": 0
+        },
+        {
+            "id": "wavesurfer_m7510km753o",
+            "startAt": 35818,
+            "endAt": 37288,
+            "text": "지금 안 보이는데 냄새만.",
+            "speaker": 1
+        },
+        {
+            "id": "c5128ebb",
+            "startAt": 37398,
+            "endAt": 39548,
+            "text": "계속 나고 있거든요. 지금 요 탄 내만요?",
+            "speaker": 1
+        },
+        {
+            "id": "f0ad0ef5",
+            "startAt": 39878,
+            "endAt": 41998,
+            "text": "현 그 안에 사람은 없는 거고요?",
+            "speaker": 0
+        },
+        {
+            "id": "cd573cd2",
+            "startAt": 42348,
+            "endAt": 45108,
+            "text": "예, 지금 퇴근해갖고 없는데 그 주인한텐 연락을 했어요.",
+            "speaker": 1
+        },
+        {
+            "id": "7ad6e46e",
+            "startAt": 45158,
+            "endAt": 46668,
+            "text": "아, 문은 잠겨있어요?",
+            "speaker": 0
+        },
+        {
+            "id": "41bc21e0",
+            "startAt": 47070,
+            "endAt": 47680,
+            "text": "예, 예.",
+            "speaker": 1
+        },
+        {
+            "id": "60a74ea6",
+            "startAt": 47820,
+            "endAt": 49340,
+            "text": "아, 선생님은 관계가 어떻게 되세요?",
+            "speaker": 0
+        },
+        {
+            "id": "036d86f6",
+            "startAt": 49830,
+            "endAt": 50850,
+            "text": "예, 집주인입니다.",
+            "speaker": 1
+        },
+        {
+            "id": "baab73f4",
+            "startAt": 51280,
+            "endAt": 52120,
+            "text": "아 건물주?",
+            "speaker": 0
+        },
+        {
+            "id": "44dcf984",
+            "startAt": 52505,
+            "endAt": 53285,
+            "text": "역삼동 ",
+            "speaker": 0
+        },
+        {
+            "id": "wavesurfer_q7ls9gkc9eg",
+            "startAt": 53320,
+            "endAt": 55200,
+            "text": "[개인정보]",
+            "speaker": 0
+        },
+        {
+            "id": "8d4d703b",
+            "startAt": 55700,
+            "endAt": 56950,
+            "text": "예 예, 맞습니다 예, 예.",
+            "speaker": 1
+        },
+        {
+            "id": "ea7f8c49",
+            "startAt": 56980,
+            "endAt": 59030,
+            "text": "네, 알겠습니다. 그 안내 좀 해주세요 ",
+            "speaker": 0
+        },
+        {
+            "id": "wavesurfer_kmjo6fcc83",
+            "startAt": 59468,
+            "endAt": 60368,
+            "text": "예예 예",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_l0nqa1vt81",
+            "startAt": 59926,
+            "endAt": 62656,
+            "text": "다른 분들 대피하시라고 말씀도 좀 해주시고요.",
+            "speaker": 0
+        },
+        {
+            "id": "bc0ef689",
+            "startAt": 63150,
+            "endAt": 64470,
+            "text": "예, 예, 예, 예.",
+            "speaker": 1
+        }
+    ],
+    "mediaType": "Mobile",
+    "gender": "M",
+    "address": "서울특별시 강남구 역삼동",
+    "disasterLarge": "화재",
+    "disasterMedium": "일반화재",
+    "urgencyLevel": "상",
+    "sentiment": "당황/난처",
+    "symptom": [],
+    "triage": ""
+}

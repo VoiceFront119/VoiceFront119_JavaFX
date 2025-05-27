@@ -1,0 +1,280 @@
+{
+    "_id": "651e4a1fb7503416e5f16524",
+    "audioPath": "20230925/Seoul/2022/20220302/converted_[20220302]-[WQ1139586487].wav",
+    "recordId": "70a64a00dade04f552f0",
+    "status": 12,
+    "startAt": 0,
+    "endAt": 68280,
+    "utterances": [
+        {
+            "id": "962cbd1c",
+            "startAt": 518,
+            "endAt": 2553,
+            "text": "네, 119입니다. 말씀하세요?",
+            "speaker": 0
+        },
+        {
+            "id": "wavesurfer_lku5fspm5to",
+            "startAt": 2154,
+            "endAt": 3531,
+            "text": " 아, 예, 수고하십니다.",
+            "speaker": 1
+        },
+        {
+            "id": "52a5c94b",
+            "startAt": 3718,
+            "endAt": 9388,
+            "text": "저기요 저 여기 지금 저희 세 사는 아가씨가 혼자 사는데.",
+            "speaker": 1
+        },
+        {
+            "id": "c4c8cc8a",
+            "startAt": 9598,
+            "endAt": 9948,
+            "text": "네.",
+            "speaker": 0
+        },
+        {
+            "id": "6b33458f",
+            "startAt": 10869,
+            "endAt": 15741,
+            "text": "그 지금 한 연락이 안 전화도 안 되고.",
+            "speaker": 1
+        },
+        {
+            "id": "6bd3b4ab",
+            "startAt": 15771,
+            "endAt": 16461,
+            "text": "세입자가?",
+            "speaker": 0
+        },
+        {
+            "id": "fd812899",
+            "startAt": 16583,
+            "endAt": 19471,
+            "text": "예, 화장실에 불은 켜져 있는데 한 열 열흘 가까이.",
+            "speaker": 1
+        },
+        {
+            "id": "564794fb",
+            "startAt": 19240,
+            "endAt": 21803,
+            "text": "아, 사람이 우려되는 거네요.",
+            "speaker": 0
+        },
+        {
+            "id": "e8a07656",
+            "startAt": 21533,
+            "endAt": 25719,
+            "text": "예, 그래서 사람이 있나, 뭐 들어갈래도 들어갈 수도 없고. 그래서 한번 앞집 아주머니가 지금",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_64ebu58t93g",
+            "startAt": 25689,
+            "endAt": 26874,
+            "text": " 주소 좀 알려주세요. ",
+            "speaker": 0
+        },
+        {
+            "id": "wavesurfer_mclnongnml",
+            "startAt": 26863,
+            "endAt": 27563,
+            "text": "여기가 지금",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_ibuko8cljio",
+            "startAt": 27547,
+            "endAt": 29263,
+            "text": "[개인정보]",
+            "speaker": 1
+        },
+        {
+            "id": "0afba082",
+            "startAt": 29343,
+            "endAt": 30227,
+            "text": "무슨 동이요?",
+            "speaker": 0
+        },
+        {
+            "id": "1962deb3",
+            "startAt": 30453,
+            "endAt": 31418,
+            "text": "노량진 1동.",
+            "speaker": 1
+        },
+        {
+            "id": "03da29e1",
+            "startAt": 31726,
+            "endAt": 32435,
+            "text": "노량진동",
+            "speaker": 0
+        },
+        {
+            "id": "wavesurfer_oahr3hnb4bg",
+            "startAt": 32395,
+            "endAt": 33195,
+            "text": "[개인정보]",
+            "speaker": 0
+        },
+        {
+            "id": "22a52f96",
+            "startAt": 33546,
+            "endAt": 35478,
+            "text": "[개인정보]",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_69985h0olpo",
+            "startAt": 35456,
+            "endAt": 37564,
+            "text": "그리고 마장로 12길",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_bijbdmejlog",
+            "startAt": 37836,
+            "endAt": 38336,
+            "text": "네",
+            "speaker": 0
+        },
+        {
+            "id": "wavesurfer_jap41l462t",
+            "startAt": 38313,
+            "endAt": 39005,
+            "text": "[개인정보]",
+            "speaker": 1
+        },
+        {
+            "id": "d381a09f",
+            "startAt": 39438,
+            "endAt": 40485,
+            "text": "몇 층 몇 호에요?",
+            "speaker": 0
+        },
+        {
+            "id": "be62d037",
+            "startAt": 41767,
+            "endAt": 43307,
+            "text": "[개인정보]",
+            "speaker": 1
+        },
+        {
+            "id": "b7405026",
+            "startAt": 43286,
+            "endAt": 45222,
+            "text": "아니, 그러니까 1층이에요, 2층이에요?",
+            "speaker": 0
+        },
+        {
+            "id": "fece18ff",
+            "startAt": 45337,
+            "endAt": 45798,
+            "text": "저여",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_0r2l6n2bh8o",
+            "startAt": 45874,
+            "endAt": 46235,
+            "text": "[개인정보]",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_eqhtbld923",
+            "startAt": 46228,
+            "endAt": 46633,
+            "text": "아가씨는",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_4aqu19d6ng",
+            "startAt": 46638,
+            "endAt": 47431,
+            "text": "[개인정보]",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_k39ijqcadko",
+            "startAt": 47777,
+            "endAt": 48492,
+            "text": "[개인정보]",
+            "speaker": 0
+        },
+        {
+            "id": "wavesurfer_i2e509flm3g",
+            "startAt": 48512,
+            "endAt": 49289,
+            "text": "예",
+            "speaker": 1
+        },
+        {
+            "id": "859f47ff",
+            "startAt": 48878,
+            "endAt": 52663,
+            "text": "저희 그러면은 경찰이랑 같이 갈거고요, 문 파손해도 되겠어요.",
+            "speaker": 0
+        },
+        {
+            "id": "d7cedde3",
+            "startAt": 52659,
+            "endAt": 53034,
+            "text": "예?",
+            "speaker": 1
+        },
+        {
+            "id": "0080c3ea",
+            "startAt": 53389,
+            "endAt": 55822,
+            "text": "파손 문 파손해도 되겠어요.",
+            "speaker": 0
+        },
+        {
+            "id": "f2f4b0db",
+            "startAt": 54446,
+            "endAt": 58732,
+            "text": "파손이요? 그러니깐 어떻게 파손을 해야 되나, 어떻게 해 되나? 고민되네",
+            "speaker": 1
+        },
+        {
+            "id": "5f1dd16d",
+            "startAt": 58423,
+            "endAt": 62371,
+            "text": "우선은 저희 가서 대원들 확인할 거고요. 그 앞에서 안내 좀 해주세요.",
+            "speaker": 0
+        },
+        {
+            "id": "5814f66a",
+            "startAt": 62363,
+            "endAt": 64785,
+            "text": "예, 여기 지금 집 앞에 집 앞에 있거든요.",
+            "speaker": 1
+        },
+        {
+            "id": "4152e5f0",
+            "startAt": 64778,
+            "endAt": 66449,
+            "text": "네, 안내해주세요.",
+            "speaker": 0
+        },
+        {
+            "id": "faf04d4e",
+            "startAt": 66164,
+            "endAt": 66944,
+            "text": "예, 예.",
+            "speaker": 1
+        }
+    ],
+    "mediaType": "Mobile",
+    "gender": "M",
+    "address": "서울특별시 동작구 노량진동",
+    "disasterLarge": "구조",
+    "disasterMedium": "기타구조",
+    "urgencyLevel": "하",
+    "sentiment": "당황/난처",
+    "symptom": [
+        "전신쇠약"
+    ],
+    "triage": "잠재응급증상"
+}

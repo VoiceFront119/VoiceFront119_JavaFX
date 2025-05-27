@@ -1,0 +1,173 @@
+{
+    "_id": "64f6c516461a963f30a3c403",
+    "audioPath": "20230829/Incheon/2023/06/09/009/converted_20230609112724_4009-009.wav",
+    "recordId": "a39f2bc763db0b60b431",
+    "status": 12,
+    "startAt": 0,
+    "endAt": 48480,
+    "utterances": [
+        {
+            "id": "aaa532a6",
+            "startAt": 215,
+            "endAt": 1244,
+            "text": "네, 119입니다.",
+            "speaker": 0
+        },
+        {
+            "id": "wavesurfer_0hp1sojqi8o",
+            "startAt": 455,
+            "endAt": 1064,
+            "text": "저리 갓",
+            "speaker": 1
+        },
+        {
+            "id": "a069b309",
+            "startAt": 1708,
+            "endAt": 2413,
+            "text": "여보세요?",
+            "speaker": 1
+        },
+        {
+            "id": "73de458a",
+            "startAt": 2404,
+            "endAt": 3910,
+            "text": "네 말씀하세요. 119예요.",
+            "speaker": 0
+        },
+        {
+            "id": "08bf37b1",
+            "startAt": 4307,
+            "endAt": 5770,
+            "text": "예, 여기 강화대로",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_8dcg4gsjoig",
+            "startAt": 5827,
+            "endAt": 7309,
+            "text": "[개인정보]",
+            "speaker": 1
+        },
+        {
+            "id": "f02e0a0f",
+            "startAt": 7360,
+            "endAt": 8110,
+            "text": "이 강화대,",
+            "speaker": 0
+        },
+        {
+            "id": "wavesurfer_gbk5r2s6oh8",
+            "startAt": 8185,
+            "endAt": 9330,
+            "text": "[개인정보]",
+            "speaker": 0
+        },
+        {
+            "id": "35b8e647",
+            "startAt": 9608,
+            "endAt": 11879,
+            "text": "[개인정보]",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_2chlgctct08",
+            "startAt": 12162,
+            "endAt": 12962,
+            "text": "네네",
+            "speaker": 0
+        },
+        {
+            "id": "wavesurfer_n867htrqhu",
+            "startAt": 12239,
+            "endAt": 13100,
+            "text": "어 하점면",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_rvmdnjghon8",
+            "startAt": 13590,
+            "endAt": 14745,
+            "text": "[개인정보]",
+            "speaker": 1
+        },
+        {
+            "id": "ec992950",
+            "startAt": 14782,
+            "endAt": 18907,
+            "text": "여기 바로 우리 앞에 포도 포도 농장에 뒤 뱀이 올라가 있어요.",
+            "speaker": 1
+        },
+        {
+            "id": "2c4622a7",
+            "startAt": 19450,
+            "endAt": 24632,
+            "text": "잠시만요, 그 확인은 됐는데요. 주소 주소가, 예, 무슨 상황인데요?",
+            "speaker": 0
+        },
+        {
+            "id": "d85dc92b",
+            "startAt": 26429,
+            "endAt": 30939,
+            "text": "아이 저 우리 우리 우리 집 앞에 포도나무에 뱀이 올라가 있다고요, 죄송한데",
+            "speaker": 1
+        },
+        {
+            "id": "cc04823b",
+            "startAt": 30143,
+            "endAt": 33803,
+            "text": "아 저 우리 집 앞에, 포도",
+            "speaker": 0
+        },
+        {
+            "id": "700fe702",
+            "startAt": 34388,
+            "endAt": 37371,
+            "text": "포도나무 위에 포도나무 위에 지금 뱀이 있어요.",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_2vs7bq7sqsg",
+            "startAt": 35392,
+            "endAt": 37382,
+            "text": "나무 위에 뱀이 있다?",
+            "speaker": 0
+        },
+        {
+            "id": "wavesurfer_g6d9k97s1no",
+            "startAt": 37692,
+            "endAt": 40028,
+            "text": " 네, 빨리 와주셔서 좀 잡아가 주세요",
+            "speaker": 1
+        },
+        {
+            "id": "a8b21666",
+            "startAt": 39374,
+            "endAt": 43697,
+            "text": "아 네, 알겠습니다. 저 이쪽으로 갈 거고요. 그 구조대원이 전화 갈 수 있어요.",
+            "speaker": 0
+        },
+        {
+            "id": "wavesurfer_9a76reepib",
+            "startAt": 43952,
+            "endAt": 47070,
+            "text": "네, 그 전화 받아주세요. 넵",
+            "speaker": 0
+        },
+        {
+            "id": "098f90c2",
+            "startAt": 46297,
+            "endAt": 47747,
+            "text": "네, 네.",
+            "speaker": 1
+        }
+    ],
+    "mediaType": "Mobile",
+    "gender": "F",
+    "address": "인천광역시 강화군 하점면",
+    "disasterLarge": "구조",
+    "disasterMedium": "기타구조",
+    "urgencyLevel": "하",
+    "sentiment": "당황/난처",
+    "symptom": [],
+    "triage": ""
+}

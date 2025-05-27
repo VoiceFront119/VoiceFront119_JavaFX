@@ -1,0 +1,180 @@
+{
+    "_id": "6509537abc5846983ad2f0ba",
+    "audioPath": "20230911/Gwangju/2023/06/12/1007/converted_20230612120420_1007-032.wav",
+    "recordId": "efc3a7e8e7a04a4c47d6",
+    "status": 12,
+    "startAt": 0,
+    "endAt": 50240,
+    "utterances": [
+        {
+            "id": "7c12ddde",
+            "startAt": 1654,
+            "endAt": 3029,
+            "text": "네, 119입니다.",
+            "speaker": 0
+        },
+        {
+            "id": "wavesurfer_t6tb3gt75e",
+            "startAt": 3004,
+            "endAt": 6231,
+            "text": "어 예, 사장님, 그 여기 입석교",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_07imevj83cg",
+            "startAt": 6559,
+            "endAt": 7668,
+            "text": "근처인데",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_m1sf5c2ek1",
+            "startAt": 7510,
+            "endAt": 8237,
+            "text": "무슨 교요?",
+            "speaker": 0
+        },
+        {
+            "id": "d4dd9bc5",
+            "startAt": 8650,
+            "endAt": 10537,
+            "text": "입석교요. 입석교.",
+            "speaker": 1
+        },
+        {
+            "id": "91810e86",
+            "startAt": 10840,
+            "endAt": 12852,
+            "text": "다리 입석교가네요.",
+            "speaker": 0
+        },
+        {
+            "id": "wavesurfer_9kjsbubk26g",
+            "startAt": 12863,
+            "endAt": 13681,
+            "text": "예예.",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_j4al9i4k79o",
+            "startAt": 13826,
+            "endAt": 14581,
+            "text": "아유 근데",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_62u0fi8tv6",
+            "startAt": 15272,
+            "endAt": 18027,
+            "text": "이게 그 막 어디 큰 불 난 줄 알았는데",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_s16d14ublq8",
+            "startAt": 19034,
+            "endAt": 23034,
+            "text": "아이 저 불이 하여튼 크게 났어요. 지금 도로가 안 보여요, 지금",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_o54kg8rjtpo",
+            "startAt": 23271,
+            "endAt": 24944,
+            "text": "한 이름을 무슨.",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_rpi03vm32fo",
+            "startAt": 23474,
+            "endAt": 24911,
+            "text": "뭐가 태워지는 것 같아요?",
+            "speaker": 0
+        },
+        {
+            "id": "1c618908",
+            "startAt": 26116,
+            "endAt": 29097,
+            "text": "아이 모르겠어요, 그 지금 도로, 국토.",
+            "speaker": 1
+        },
+        {
+            "id": "7041c7d0",
+            "startAt": 27867,
+            "endAt": 31189,
+            "text": "도로에서 뭘 태운가요, 아니면은 뭐 건물사이",
+            "speaker": 0
+        },
+        {
+            "id": "wavesurfer_plf6f9768eo",
+            "startAt": 30080,
+            "endAt": 33108,
+            "text": "그런 걸로 생각되는데 네비게이션상에 뭐",
+            "speaker": 1
+        },
+        {
+            "id": "59463706",
+            "startAt": 33301,
+            "endAt": 35655,
+            "text": "주택이나 그런 건 안 보이는 거 같았는데.",
+            "speaker": 1
+        },
+        {
+            "id": "12f80b9b",
+            "startAt": 35722,
+            "endAt": 38199,
+            "text": "예, 지금 어디서 어느 쪽으로 가다가 보신 거예요?",
+            "speaker": 0
+        },
+        {
+            "id": "bad6c1e2",
+            "startAt": 39225,
+            "endAt": 43056,
+            "text": "그 나주에서 장성으로 가면서 본 거거든요.",
+            "speaker": 1
+        },
+        {
+            "id": "15bb1620",
+            "startAt": 41903,
+            "endAt": 43835,
+            "text": "예, 오른쪽이에요? 뭐 왼쪽이에요?",
+            "speaker": 0
+        },
+        {
+            "id": "227ebe52",
+            "startAt": 44062,
+            "endAt": 45177,
+            "text": "왼쪽에 있습니다.",
+            "speaker": 1
+        },
+        {
+            "id": "4cd0c9ec",
+            "startAt": 45131,
+            "endAt": 48426,
+            "text": "왼쪽에? 예, 알겠습니다, 가볼게요.",
+            "speaker": 0
+        },
+        {
+            "id": "wavesurfer_16o3cd8kme",
+            "startAt": 46221,
+            "endAt": 46831,
+            "text": "저기요.",
+            "speaker": 1
+        },
+        {
+            "id": "9387036d",
+            "startAt": 47949,
+            "endAt": 49567,
+            "text": "네, 예, 감사합니다 네.",
+            "speaker": 1
+        }
+    ],
+    "mediaType": "Mobile",
+    "gender": "M",
+    "address": "광주광역시 광산구 송치동",
+    "disasterLarge": "화재",
+    "disasterMedium": "기타화재",
+    "urgencyLevel": "상",
+    "sentiment": "중립",
+    "symptom": [],
+    "triage": ""
+}

@@ -1,0 +1,168 @@
+{
+    "_id": "64f6c516461a963f30a3c650",
+    "audioPath": "20230829/Incheon/2023/06/09/012/converted_20230609064509_4012-012.wav",
+    "recordId": "e18b0f9ac78c7186da19",
+    "status": 12,
+    "startAt": 0,
+    "endAt": 41320,
+    "utterances": [
+        {
+            "id": "4f18b30f",
+            "startAt": 376,
+            "endAt": 1692,
+            "text": "네, 119입니다.",
+            "speaker": 0
+        },
+        {
+            "id": "wavesurfer_j5f8t4m3nco",
+            "startAt": 2277,
+            "endAt": 3170,
+            "text": "네.",
+            "speaker": 1
+        },
+        {
+            "id": "d2882030",
+            "startAt": 3714,
+            "endAt": 8668,
+            "text": "어, 저희 아버지가 지금 숨을 못 쉬시고 너무 힘들어 하셔가지고.",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_757vq2hjgao",
+            "startAt": 3931,
+            "endAt": 5216,
+            "text": "예, 말씀하세요.",
+            "speaker": 0
+        },
+        {
+            "id": "wavesurfer_4k4eppgnl7o",
+            "startAt": 7044,
+            "endAt": 9283,
+            "text": "아버지가 호흡곤란 있으세요?",
+            "speaker": 0
+        },
+        {
+            "id": "wavesurfer_o2ogbefc6jo",
+            "startAt": 9336,
+            "endAt": 10529,
+            "text": "네, 네, 네.",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_j1b61gqhp5o",
+            "startAt": 9616,
+            "endAt": 11163,
+            "text": "의식은 있으세요?",
+            "speaker": 0
+        },
+        {
+            "id": "wavesurfer_84o70ctee8o",
+            "startAt": 11453,
+            "endAt": 13200,
+            "text": "의식은 있으시고요.",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_ae5fm5ep1q",
+            "startAt": 13069,
+            "endAt": 14761,
+            "text": "응 나이대가 어떻게 될까요?",
+            "speaker": 0
+        },
+        {
+            "id": "wavesurfer_8fkfh8l4um8",
+            "startAt": 14993,
+            "endAt": 16393,
+            "text": "83세요.",
+            "speaker": 1
+        },
+        {
+            "id": "1f81a124",
+            "startAt": 15783,
+            "endAt": 20192,
+            "text": "83세. 아, 선생님 주소 좀 불러주세요. 아파트예요? 몇 동이에요?",
+            "speaker": 0
+        },
+        {
+            "id": "a5c9007b",
+            "startAt": 20068,
+            "endAt": 21393,
+            "text": "아파트예요.",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_8jdcpabhhpo",
+            "startAt": 21737,
+            "endAt": 27838,
+            "text": "어 있는 집. 네. 인 어. 계양산 대창 센시티.",
+            "speaker": 1
+        },
+        {
+            "id": "5279f64d",
+            "startAt": 21745,
+            "endAt": 23890,
+            "text": "대 대창 센트빌?",
+            "speaker": 0
+        },
+        {
+            "id": "110427c9",
+            "startAt": 27835,
+            "endAt": 29194,
+            "text": "예, 몇 동 몇 호?",
+            "speaker": 0
+        },
+        {
+            "id": "38a23dd0",
+            "startAt": 29461,
+            "endAt": 33085,
+            "text": "[개인정보]",
+            "speaker": 1
+        },
+        {
+            "id": "469cc118",
+            "startAt": 33526,
+            "endAt": 34253,
+            "text": "네.",
+            "speaker": 1
+        },
+        {
+            "id": "f090ec74",
+            "startAt": 33752,
+            "endAt": 37341,
+            "text": "아, 예, 알겠습니다. 선생님 인근에 구급차 있으니까요.",
+            "speaker": 0
+        },
+        {
+            "id": "wavesurfer_h8cv66inh4o",
+            "startAt": 35255,
+            "endAt": 36240,
+            "text": "네.",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_an75idgq0e",
+            "startAt": 37579,
+            "endAt": 40187,
+            "text": "네, 네. 네.",
+            "speaker": 1
+        },
+        {
+            "id": "c8b73faf",
+            "startAt": 37588,
+            "endAt": 40125,
+            "text": "전화드리니까 전화 좀 받아주세요.",
+            "speaker": 0
+        }
+    ],
+    "mediaType": "Mobile",
+    "gender": "F",
+    "address": "인천광역시 계양구 방축동",
+    "disasterLarge": "구급",
+    "disasterMedium": "질병(중증)",
+    "urgencyLevel": "상",
+    "sentiment": "불안/걱정",
+    "symptom": [
+        "호흡곤란"
+    ],
+    "triage": "응급증상"
+}
