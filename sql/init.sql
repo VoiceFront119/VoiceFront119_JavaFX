@@ -13,9 +13,9 @@ CREATE TABLE IF NOT EXISTS users (
     password VARCHAR(40) NOT NULL,
     user_phone VARCHAR(15) NOT NULL,
     birth_date DATE NULL,
-    profile_image VARCHAR(225),
+    profile_image LONGBLOB DEFAULT NULL,
     PRIMARY KEY (id),
-    UNIQUE INDEX username_UNIQUE (user_ID ASC) VISIBLE
+    UNIQUE INDEX username_UNIQUE (user_ID ASC)
 );
 
 -- 3. 로그인 가능한 예시 사용자 추가
