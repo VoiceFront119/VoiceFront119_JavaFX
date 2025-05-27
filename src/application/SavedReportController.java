@@ -207,10 +207,6 @@ public class SavedReportController {
             }
         });
         
-//        // 신고 유형 선택
-//        majorCategory = categoryComboBox.getValue();
-//        subCategory = typeComboBox.getValue();
-        
     }
     
     // 알림창 (AlertType : IMFORMATION, WARNING, ERROR, CONFIRMATION, NONE)

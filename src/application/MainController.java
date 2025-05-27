@@ -213,9 +213,11 @@ public class MainController {
     @FXML
 	private void onSearchClicked(ActionEvent event) {
 	    String searchValue = searchText.getText().trim();
+	    // 검색어 없이 검색 버튼만 클릭 시 새로고침
 	    if (searchValue.isEmpty()) {
-	    	dataList.clear();
-	    	loadDataFromDatabase();  // 전체 데이터 로드
+	    	dataList.clear();  // 기존 리스트 비우기
+            loadDataFromDatabase();  // DB에서 다시 로드
+            updatePriorityList();    // 우선순위 리스트 다시 구성
 	        return;
 	    }
 	
