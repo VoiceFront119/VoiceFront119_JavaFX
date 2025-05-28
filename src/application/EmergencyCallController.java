@@ -33,10 +33,15 @@ import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 
 
@@ -65,6 +70,7 @@ public class EmergencyCallController {
     
     // 테이블뷰
     @FXML private TableView<Reception> reportHistoryTableView;
+    @FXML private TableColumn<Reception, String> historyCaseNumColumn;
     @FXML private TableColumn<Reception, String> historyDateColumn;
     @FXML private TableColumn<Reception, String> historyTypeColumn;
     @FXML private TableColumn<Reception, String> historyReporterColumn;
@@ -101,7 +107,7 @@ public class EmergencyCallController {
     	
     	// DB 연결 초기화
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/emergency_system", "root", "123456");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/emergency_system", "root", AppConfig.DB_PASSWORD);
         } catch (SQLException e) {
             e.printStackTrace();
             showAlert(Alert.AlertType.ERROR, "DB 연결 실패", "데이터베이스 연결 중 오류가 발생했습니다.");
@@ -115,8 +121,8 @@ public class EmergencyCallController {
         callStartTimeLabel.setText("통화 시작 시간: " + callStartTime.format(DateTimeFormatter.ofPattern("HH:mm:ss")));
         startClock();
         
-        
         // 동일한 전화번호로 접수된 이전 신고 내역
+        historyCaseNumColumn.setCellValueFactory(new PropertyValueFactory<>("caseNumber"));
         historyDateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         historyTypeColumn.setCellValueFactory(cellData -> cellData.getValue().accidentTypeCombinedProperty());
         historyReporterColumn.setCellValueFactory(new PropertyValueFactory<>("reporter"));
@@ -124,6 +130,20 @@ public class EmergencyCallController {
         String phoneNumber = AppConfig.INCOMING_PHONENUMBER;
         loadHistoryByPhoneNumber(phoneNumber);
         reportHistoryTableView.setItems(dataList);
+        
+        // 행 클릭 시 상세정보 창 로드
+        reportHistoryTableView.setRowFactory(tv -> {
+            TableRow<Reception> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (!row.isEmpty() && event.getClickCount() == 1) {
+                	// 클릭된 행의 데이터 가져오기
+                    Reception clickedReception = row.getItem();
+                    Integer clickedCaseNumber = clickedReception.getCaseNumber();
+                    opensavedreportpage(clickedCaseNumber);
+                }
+            });
+            return row;
+        });
         
         // 사고 유형 고르기 (콤보박스 형태)
         categoryComboBox.setItems(FXCollections.observableArrayList("구조", "구급", "화재", "기타"));
@@ -179,13 +199,14 @@ public class EmergencyCallController {
     	// 데이터리스트 초기화
         dataList.clear();
 
-        String query = "SELECT report_date, report_time, accident_type, reporter FROM reports WHERE phone_number = ?";
+        String query = "SELECT id, report_date, report_time, accident_type, reporter FROM reports WHERE phone_number = ?";
 
         try (PreparedStatement pstmt = connection.prepareStatement(query)) {
             pstmt.setString(1, phoneNumber);
             ResultSet rs = pstmt.executeQuery();  // 쿼리 실행 결과
 
             while (rs.next()) {
+            	int caseNum = rs.getInt("id");
                 String date = rs.getString("report_date");
                 String time = rs.getString("report_time");
                 String accident_type = rs.getString("accident_type");
@@ -202,7 +223,7 @@ public class EmergencyCallController {
                 
                 // Reception 객체 생성
                 Reception reception = new Reception(
-                    null, date, time, "", historyMajorCategory, historySubCategory, "", "", "", "", "", "", reporter);
+                	caseNum, date, time, "", historyMajorCategory, historySubCategory, "", "", "", "", "", "", reporter);
 
                 dataList.add(reception);
             }
@@ -211,7 +232,34 @@ public class EmergencyCallController {
             e.printStackTrace();
             showAlert(Alert.AlertType.ERROR, "조회 실패", "데이터를 불러오는 중 오류가 발생했습니다.");
         }
-     }
+    }
+   
+    // 행 클릭시 상세보기 페이지 열기
+    private void opensavedreportpage(int selectedId) {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("saved_report_page.fxml"));
+	        Parent root = loader.load();
+			
+			// 컨트롤러 얻기
+	        SavedReportController controller = loader.getController();
+	        controller.setCaseId(selectedId);  // ID 넘기기
+			
+			Stage stage = new Stage(); // 새로운 창 생성
+	        stage.setScene(new Scene(root));
+	        stage.setTitle("VoiceFront119 - 접수 상세보기");
+
+	        // 아이콘 설정
+	        Image image = new Image(getClass().getResource("/images/119 Logo-01.png").toExternalForm());
+	        stage.getIcons().add(image);
+
+	        // 새 화면을 표시
+	        stage.show();
+	        
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}  
+	}
     
     // 통화 종료 버튼 클릭시
     @FXML

@@ -98,7 +98,7 @@ public class SigninController {
 
         String query = "INSERT INTO users (user_ID, user_name, password, user_phone, birth_date, profile_image) VALUES (?, ?, ?, ?, ?, ?)";
 
-        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/emergency_system", "root", "123456");
+        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/emergency_system", "root", AppConfig.DB_PASSWORD);
              PreparedStatement stmt = conn.prepareStatement(query)) {
 
             stmt.setString(1, userId);
@@ -130,7 +130,7 @@ public class SigninController {
 
     private boolean isUserIdDuplicate(String userId) {
         String query = "SELECT COUNT(*) FROM users WHERE user_ID = ?";
-        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/emergency_system", "root", "123456");
+        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/emergency_system", "root", AppConfig.DB_PASSWORD);
              PreparedStatement stmt = conn.prepareStatement(query)) {
 
             stmt.setString(1, userId);

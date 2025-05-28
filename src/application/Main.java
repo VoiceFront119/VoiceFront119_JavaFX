@@ -9,7 +9,6 @@ import javafx.scene.image.Image;
 
 
 public class Main extends Application {
-	public static final String API_URL = "http://localhost:8080/api";
 	
 	@Override
 	public void start(Stage primaryStage) {

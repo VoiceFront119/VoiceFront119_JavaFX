@@ -23,17 +23,23 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import javafx.scene.control.ButtonBar;
 
 public class SavedReportController {
@@ -61,6 +67,7 @@ public class SavedReportController {
     
     // 테이블뷰
     @FXML private TableView<Reception> reportHistoryTableView;
+    @FXML private TableColumn<Reception, String> historyCaseNumColumn;
     @FXML private TableColumn<Reception, String> historyDateColumn;
     @FXML private TableColumn<Reception, String> historyReporterColumn;
     @FXML private TableColumn<Reception, String> historyTypeColumn;
@@ -143,13 +150,14 @@ public class SavedReportController {
                 resultTextArea.setText(result);
                 
                 // 동일한 전화번호로 접수된 이전 신고 내역
+                historyCaseNumColumn.setCellValueFactory(new PropertyValueFactory<>("caseNumber"));
                 historyDateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
                 historyReporterColumn.setCellValueFactory(new PropertyValueFactory<>("reporter"));
                 historyTypeColumn.setCellValueFactory(new PropertyValueFactory<>("subCategory"));
                 
                 loadHistoryByPhoneNumber(phoneNum);
                 reportHistoryTableView.setItems(dataList);
-
+                
                 // 콤보박스 설정
                 categoryComboBox.setValue(majorCategory);
                 List<String> types = categoryToTypes.get(majorCategory);
@@ -166,6 +174,23 @@ public class SavedReportController {
             e.printStackTrace();
             showAlert(Alert.AlertType.ERROR, "DB 오류", "신고 데이터를 불러오는 중 오류가 발생했습니다.");
         }
+        
+        // 행 클릭 시 상세정보 창 로드
+        reportHistoryTableView.setRowFactory(tv -> {
+            TableRow<Reception> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (!row.isEmpty() && event.getClickCount() == 1) {
+                	// 클릭된 행의 데이터 가져오기
+                    Reception clickedReception = row.getItem();
+                    Integer clickedCaseNumber = clickedReception.getCaseNumber();
+                    opensavedreportpage(clickedCaseNumber);
+                }
+            });
+            return row;
+        });
+            
+        
+        
     }
     
     public void initialize() {
@@ -179,7 +204,7 @@ public class SavedReportController {
     	
     	// DB 연결 초기화
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/emergency_system", "root", "123456");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/emergency_system", "root", AppConfig.DB_PASSWORD);
         } catch (SQLException e) {
             e.printStackTrace();
             showAlert(Alert.AlertType.ERROR, "DB 연결 실패", "데이터베이스 연결 중 오류가 발생했습니다.");
@@ -223,7 +248,7 @@ public class SavedReportController {
     	// 데이터리스트 초기화
         dataList.clear();
 
-        String query = "SELECT report_date, accident_type, reporter FROM reports WHERE phone_number = ?";
+        String query = "SELECT id, report_date, accident_type, reporter FROM reports WHERE phone_number = ?";
 
         try (PreparedStatement pstmt = connection.prepareStatement(query)) {
             pstmt.setString(1, phoneNumber);
@@ -231,6 +256,7 @@ public class SavedReportController {
 
             while (rs.next()) {
                 String accident_type = rs.getString("accident_type");
+                int caseNum = rs.getInt("id");
                 
                 // accident_type('대분류-중분류') 대분류랑 중분류로 split
                 String historyMajorCategory = "";
@@ -243,7 +269,7 @@ public class SavedReportController {
                 
                 // Reception 객체 생성
                 Reception reception = new Reception(
-                    null, date, "", "", historyMajorCategory, historySubCategory, "", "", "", "", "", "", reporter
+                	caseNum, date, "", "", historyMajorCategory, historySubCategory, "", "", "", "", "", "", reporter
                 );
 
                 dataList.add(reception);
@@ -254,6 +280,33 @@ public class SavedReportController {
             showAlert(Alert.AlertType.ERROR, "조회 실패", "데이터를 불러오는 중 오류가 발생했습니다.");
         }
      }
+    
+    // 행 클릭시 상세보기 페이지 열기
+    private void opensavedreportpage(int selectedId) {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("saved_report_page.fxml"));
+	        Parent root = loader.load();
+			
+			// 컨트롤러 얻기
+	        SavedReportController controller = loader.getController();
+	        controller.setCaseId(selectedId);  // ID 넘기기
+			
+			Stage stage = new Stage(); // 새로운 창 생성
+	        stage.setScene(new Scene(root));
+	        stage.setTitle("VoiceFront119 - 접수 상세보기");
+
+	        // 아이콘 설정
+	        Image image = new Image(getClass().getResource("/images/119 Logo-01.png").toExternalForm());
+	        stage.getIcons().add(image);
+
+	        // 새 화면을 표시
+	        stage.show();
+	        
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}  
+	}
     
     // 수정 버튼 클릭 시 텍스트 영역을 수정 가능하게 만들고 스타일 변경
     @FXML

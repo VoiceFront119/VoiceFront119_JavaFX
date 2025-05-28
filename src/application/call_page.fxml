@@ -87,9 +87,10 @@
                <content>
                   <TableView fx:id="reportHistoryTableView" prefHeight="99.0" prefWidth="240.0">
                     <columns>
-                      <TableColumn fx:id="historyDateColumn" prefWidth="85.0" text="날짜" />
-                        <TableColumn fx:id="historyTypeColumn" prefWidth="85.0" text="사고 유형" />
-                        <TableColumn fx:id="historyReporterColumn" prefWidth="70.0" text="접수자" />
+                        <TableColumn fx:id="historyCaseNumColumn" prefWidth="50.0" text="No." />
+                      <TableColumn fx:id="historyDateColumn" prefWidth="75.0" text="날짜" />
+                        <TableColumn fx:id="historyTypeColumn" prefWidth="70.0" text="사고 유형" />
+                        <TableColumn fx:id="historyReporterColumn" prefWidth="60.0" text="접수자" />
                     </columns>
                   </TableView>
                </content>

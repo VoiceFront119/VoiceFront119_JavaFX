@@ -72,7 +72,6 @@ public class MainController {
     private Integer lastSelectedCaseNumber = null;   // 마지막으로 클릭된 행 저장용
     double tableViewY = 200;   // 테이블 뷰 Y 좌표
     private Connection connection; // 전역 DB 연결 객체
-    private Reception selectedReport;
     private String userName;
     private String userId;
     
@@ -135,7 +134,7 @@ public class MainController {
        
         // DB 연결 초기화
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/emergency_system", "root", "123456");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/emergency_system", "root", AppConfig.DB_PASSWORD);
         } catch (SQLException e) {
             e.printStackTrace();
             showAlert("DB 연결 실패", "데이터베이스 연결 중 오류가 발생했습니다.");
@@ -198,6 +197,16 @@ public class MainController {
         
         // 사건 우선순위 리스트
         updatePriorityList();
+        
+        // 우선순위 리스트뷰 항목 클릭 시 상세보기 페이지 호출
+        priorityListView.setOnMouseClicked(event -> {
+            String selectedItem = priorityListView.getSelectionModel().getSelectedItem();
+            if (selectedItem != null && event.getClickCount() == 1) {
+            	String[] parts = selectedItem.split(" -")[0].split("No\\. ");
+            	int selectedId = Integer.parseInt(parts[1]);
+            	opensavedreportpage(selectedId);
+            }
+        });
 	}
     
     // 알림창
@@ -356,6 +365,40 @@ public class MainController {
 	        Integer selectedId = selectedReport.getCaseNumber();  // 접수 번호
 	        controller.setCaseId(selectedId);  // ID 넘기기
 	        
+			
+			Stage stage = new Stage(); // 새로운 창 생성
+	        stage.setScene(new Scene(root));
+	        stage.setTitle("VoiceFront119 - 접수 상세보기");
+
+	        // 아이콘 설정
+	        Image image = new Image(getClass().getResource("/images/119 Logo-01.png").toExternalForm());
+	        stage.getIcons().add(image);
+	        
+	        // 테이블뷰, 우선순위 리스트 새로 고침
+	        stage.setOnHidden(e -> {
+	            dataList.clear();  // 기존 리스트 비우기
+	            loadDataFromDatabase();  // DB에서 다시 로드
+	            updatePriorityList();    // 우선순위 리스트 다시 구성
+	        });
+
+	        // 새 화면을 표시
+	        stage.show();
+	        
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}  
+	}
+    
+    // 리스트뷰 행 선택 시 상세보기 창을 열기 위한 메서드
+    private void opensavedreportpage(int selectedId) {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("saved_report_page.fxml"));
+	        Parent root = loader.load();
+			
+			// 컨트롤러 얻기
+	        SavedReportController controller = loader.getController();
+	        controller.setCaseId(selectedId);  // ID 넘기기
 			
 			Stage stage = new Stage(); // 새로운 창 생성
 	        stage.setScene(new Scene(root));

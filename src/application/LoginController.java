@@ -33,7 +33,7 @@ public class LoginController {
         String inputPw = passwordText.getText();
 
         // DB에서 사용자 인증 (비밀번호 다름)
-        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/emergency_system", "root", "123456");
+        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/emergency_system", "root", AppConfig.DB_PASSWORD);
              PreparedStatement stmt = conn.prepareStatement("SELECT * FROM users WHERE user_ID = ? AND password = ?")) {
 
             stmt.setString(1, inputId);
