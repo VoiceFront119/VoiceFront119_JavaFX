@@ -236,6 +236,7 @@ public class MypageController {
 
             int affectedRows = pstmt.executeUpdate();
             if (affectedRows > 0) {
+                isDeleted = true;
                 showAlert(Alert.AlertType.INFORMATION, "삭제 완료", "신고 정보가 삭제되었습니다.");
             } else {
                 showAlert(Alert.AlertType.WARNING, "삭제 실패", "해당 ID의 신고 정보가 없습니다.");
