@@ -47,11 +47,11 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #eb8c1e;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SavedReportController">
    <children>
-      <TextArea fx:id="historyDialogueTextArea" editable="false" layoutX="155.0" layoutY="221.0" prefHeight="251.0" prefWidth="500.0" promptText="통화 내용 텍스트" style="-fx-focus-traversable: false; -fx-background-color: #aeaeae;" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="15.0">
+      <TextArea fx:id="historyDialogueTextArea" editable="false" layoutX="155.0" layoutY="221.0" prefHeight="200.0" prefWidth="500.0" promptText="통화 내용 텍스트" style="-fx-focus-traversable: false; -fx-background-color: #aeaeae;" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="15.0">
          <cursor>
             <Cursor fx:constant="NONE" />
          </cursor></TextArea>
-      <TextArea fx:id="historySummaryTextArea" editable="false" layoutX="14.0" layoutY="273.0" prefHeight="210.0" prefWidth="500.0" promptText="통화 요약 및 분석" style="-fx-focus-traversable: false;" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="25.0">
+      <TextArea fx:id="historySummaryTextArea" editable="false" layoutX="25.0" layoutY="228.0" prefHeight="200.0" prefWidth="500.0" promptText="통화 요약 및 분석" style="-fx-focus-traversable: false;" AnchorPane.bottomAnchor="72.0" AnchorPane.leftAnchor="25.0">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor></TextArea>
@@ -86,9 +86,9 @@
                <content>
                   <TableView fx:id="reportHistoryTableView" prefHeight="99.0" prefWidth="240.0">
                     <columns>
-                      <TableColumn fx:id="historyDateColumn" prefWidth="70.0" text="날짜" />
-                      <TableColumn fx:id="historyTimeColumn" prefWidth="70.0" text="시간" />
-                        <TableColumn fx:id="historyTypeColumn" prefWidth="100.0" text="사고 유형" />
+                      <TableColumn fx:id="historyDateColumn" prefWidth="100.0" text="날짜" />
+                        <TableColumn fx:id="historyTypeColumn" prefWidth="70.0" text="사고 유형" />
+                      <TableColumn fx:id="historyReporterColumn" prefWidth="70.0" text="접수자" />
                     </columns>
                   </TableView>
                </content>
@@ -97,15 +97,15 @@
       </TabPane>
       <AnchorPane layoutX="535.0" layoutY="451.0" prefHeight="26.0" prefWidth="240.0" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="25.0">
          <children>
-            <Button fx:id="deleteButton" onAction="#onDeleteButtonClick" layoutY="5.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="70.0" text="삭제" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <Button fx:id="deleteButton" layoutY="5.0" mnemonicParsing="false" onAction="#onDeleteButtonClicked" prefHeight="22.0" prefWidth="70.0" text="삭제" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button fx:id="saveButton" layoutX="126.0" layoutY="1.0" mnemonicParsing="false" onAction="#saveReportToDB" prefHeight="22.0" prefWidth="70.0" text="저장" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <Button fx:id="saveButton" layoutX="126.0" layoutY="1.0" mnemonicParsing="false" onAction="#saveReportToDB" prefHeight="22.0" prefWidth="70.0" text="저장" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button fx:id="editButton" layoutX="85.0" mnemonicParsing="false" onAction="#onEditButtonClick" prefHeight="22.0" prefWidth="70.0" text="수정" AnchorPane.topAnchor="0.0">
+            <Button fx:id="editButton" layoutX="85.0" mnemonicParsing="false" onAction="#onEditButtonClick" prefHeight="22.0" prefWidth="70.0" text="수정" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -113,5 +113,6 @@
          </children>
       </AnchorPane>
       <Text fx:id="caseTypeText" layoutX="535.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="사고 유형 분류" />
+      <TextArea fx:id="resultTextArea" layoutX="25.0" layoutY="440.0" prefHeight="46.0" prefWidth="500.0" promptText="처리 결과" stylesheets="@style.css" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="25.0" />
    </children>
 </AnchorPane>

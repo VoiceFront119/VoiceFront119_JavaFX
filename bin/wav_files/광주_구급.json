@@ -1,0 +1,175 @@
+{
+    "_id": "64f6b358446b19d68e337cb2",
+    "audioPath": "20230904/Gwangju/2021/08/01/1005/converted_20210801122248_1005-030.wav",
+    "recordId": "9f917e00a074e25a834b",
+    "status": 12,
+    "startAt": 0,
+    "endAt": 45120,
+    "utterances": [
+        {
+            "id": "4c50568b",
+            "startAt": 1598,
+            "endAt": 2408,
+            "text": "119입니다.",
+            "speaker": 0
+        },
+        {
+            "id": "5b518c68",
+            "startAt": 3128,
+            "endAt": 4148,
+            "text": "아, 네, 여보세요.",
+            "speaker": 1
+        },
+        {
+            "id": "183c0900",
+            "startAt": 4178,
+            "endAt": 4867,
+            "text": "네.",
+            "speaker": 0
+        },
+        {
+            "id": "b5b222cd",
+            "startAt": 5288,
+            "endAt": 8228,
+            "text": "아, 제가 그 라면 끓이다가.",
+            "speaker": 1
+        },
+        {
+            "id": "372586c0",
+            "startAt": 8258,
+            "endAt": 8748,
+            "text": "네.",
+            "speaker": 0
+        },
+        {
+            "id": "7bb603f2",
+            "startAt": 9198,
+            "endAt": 11708,
+            "text": "에스 그 손목을 좀 디였어요.",
+            "speaker": 1
+        },
+        {
+            "id": "950aeb24",
+            "startAt": 11988,
+            "endAt": 12589,
+            "text": "네.",
+            "speaker": 0
+        },
+        {
+            "id": "f02ed257",
+            "startAt": 13241,
+            "endAt": 15841,
+            "text": "네, 그래가지고 좀 병원에 가고 싶은데.",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_orsh486g42g",
+            "startAt": 16568,
+            "endAt": 18386,
+            "text": "뭐 구급차가 필요하신 상황이에요?",
+            "speaker": 0
+        },
+        {
+            "id": "wavesurfer_97esaeku2k",
+            "startAt": 18735,
+            "endAt": 19935,
+            "text": "네, 맞아요.",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_24qqd587udg",
+            "startAt": 19379,
+            "endAt": 21115,
+            "text": "네, 위치 말씀해 주세요.",
+            "speaker": 0
+        },
+        {
+            "id": "wavesurfer_n2abvg7ps0o",
+            "startAt": 21486,
+            "endAt": 24359,
+            "text": "여기 월계동이고.",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_7bkri9kht48",
+            "startAt": 24456,
+            "endAt": 29465,
+            "text": "***[개인정보]",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_fhn43v161h8",
+            "startAt": 29938,
+            "endAt": 31729,
+            "text": "예, 그 한양빌라.",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_067413gj6o8",
+            "startAt": 31732,
+            "endAt": 32669,
+            "text": "***[개인정보]",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_dg54k8uktd",
+            "startAt": 34142,
+            "endAt": 34742,
+            "text": "한양빌라.",
+            "speaker": 0
+        },
+        {
+            "id": "wavesurfer_79esdbtjumo",
+            "startAt": 34752,
+            "endAt": 35761,
+            "text": "***[개인정보]",
+            "speaker": 0
+        },
+        {
+            "id": "wavesurfer_e4obkjme7f",
+            "startAt": 36474,
+            "endAt": 38974,
+            "text": "전화 끊지 마세요. 응급처치 지도 받으세요.",
+            "speaker": 0
+        },
+        {
+            "id": "wavesurfer_4e2cvqh298o",
+            "startAt": 39302,
+            "endAt": 39729,
+            "text": "네.",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_kuijnmcgokg",
+            "startAt": 41202,
+            "endAt": 42774,
+            "text": "여보세요, 말씀하십쇼.",
+            "speaker": 0
+        },
+        {
+            "id": "wavesurfer_r1i65e4bl4g",
+            "startAt": 42538,
+            "endAt": 45120,
+            "text": "네, 아 저 화상입어가지고요.",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_ouhsgu46678",
+            "startAt": 44756,
+            "endAt": 45120,
+            "text": "환.",
+            "speaker": 0
+        }
+    ],
+    "mediaType": "Mobile",
+    "gender": "M",
+    "address": "광주광역시 광산구 월계동",
+    "disasterLarge": "구급",
+    "disasterMedium": "부상",
+    "urgencyLevel": "하",
+    "sentiment": "불안/걱정",
+    "symptom": [
+        "기타통증"
+    ],
+    "triage": "잠재응급증상"
+}

@@ -135,7 +135,7 @@ public class MainController {
        
         // DB 연결 초기화
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/emergency_system", "root", "123456");
+        	connection = DriverManager.getConnection(DBConfig.DB_URL, DBConfig.DB_USER, DBConfig.DB_PASSWORD);
         } catch (SQLException e) {
             e.printStackTrace();
             showAlert("DB 연결 실패", "데이터베이스 연결 중 오류가 발생했습니다.");

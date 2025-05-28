@@ -81,7 +81,7 @@ public class IncomingCallController {
     	
     	// DB 연결 초기화
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/emergency_system", "root", "123456");
+        	connection = DriverManager.getConnection(DBConfig.DB_URL, DBConfig.DB_USER, DBConfig.DB_PASSWORD);
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -1,0 +1,250 @@
+{
+    "_id": "64f6b358446b19d68e336f1b",
+    "audioPath": "20230904/Gwangju/2021/01/13/1007/converted_20210113022157_1007-032.wav",
+    "recordId": "9d12db5670bc19ce57a8",
+    "status": 12,
+    "startAt": 0,
+    "endAt": 58120,
+    "utterances": [
+        {
+            "id": "f0119601",
+            "startAt": 1199,
+            "endAt": 2080,
+            "text": "119입니다.",
+            "speaker": 0
+        },
+        {
+            "id": "94be002e",
+            "startAt": 2593,
+            "endAt": 3390,
+            "text": "여보세요.",
+            "speaker": 1
+        },
+        {
+            "id": "c16a3f0c",
+            "startAt": 3384,
+            "endAt": 4134,
+            "text": "네, 119입니다.",
+            "speaker": 0
+        },
+        {
+            "id": "f878432b",
+            "startAt": 4694,
+            "endAt": 6316,
+            "text": "여기 저, 저.",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_nirvmphmb38",
+            "startAt": 6637,
+            "endAt": 7009,
+            "text": "장시",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_en37o6knbbo",
+            "startAt": 7453,
+            "endAt": 8280,
+            "text": "장신로.",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_9e2lm1f9e6o",
+            "startAt": 8815,
+            "endAt": 9352,
+            "text": "[개인정보]",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_pdqcrqjfte",
+            "startAt": 9778,
+            "endAt": 11151,
+            "text": "[개인정보]",
+            "speaker": 1
+        },
+        {
+            "id": "cffe8abf",
+            "startAt": 11254,
+            "endAt": 13114,
+            "text": "자, 잠시만요, 좌신로.",
+            "speaker": 0
+        },
+        {
+            "id": "8d35a5f3",
+            "startAt": 13640,
+            "endAt": 15090,
+            "text": "장, 장신로.",
+            "speaker": 1
+        },
+        {
+            "id": "096d26ba",
+            "startAt": 15334,
+            "endAt": 16506,
+            "text": "장신로요? 네.",
+            "speaker": 0
+        },
+        {
+            "id": "wavesurfer_6v16mrj7fe8",
+            "startAt": 16528,
+            "endAt": 17854,
+            "text": "[개인정보]",
+            "speaker": 0
+        },
+        {
+            "id": "wavesurfer_et5mi5vrce",
+            "startAt": 18269,
+            "endAt": 18651,
+            "text": "[개인정보]",
+            "speaker": 1
+        },
+        {
+            "id": "4e916ea7",
+            "startAt": 18977,
+            "endAt": 20067,
+            "text": "[개인정보]",
+            "speaker": 0
+        },
+        {
+            "id": "cb46af65",
+            "startAt": 20289,
+            "endAt": 21435,
+            "text": "[개인정보]",
+            "speaker": 1
+        },
+        {
+            "id": "7a677f18",
+            "startAt": 21667,
+            "endAt": 24157,
+            "text": "네, 혹시 주소 이게 다예요. 뒤에 숫자 없어요?",
+            "speaker": 0
+        },
+        {
+            "id": "b69f58fb",
+            "startAt": 24611,
+            "endAt": 26483,
+            "text": "예, 그 드림프라자라고 있는데.",
+            "speaker": 1
+        },
+        {
+            "id": "b969bf4b",
+            "startAt": 26477,
+            "endAt": 27377,
+            "text": "드림프라자?",
+            "speaker": 0
+        },
+        {
+            "id": "01cc1edf",
+            "startAt": 27818,
+            "endAt": 31063,
+            "text": "예예 그 소방, 오늘 소방 호스가 터졌거든요, 여기.",
+            "speaker": 1
+        },
+        {
+            "id": "e101ddd9",
+            "startAt": 31057,
+            "endAt": 31649,
+            "text": "네, 네, 네.",
+            "speaker": 0
+        },
+        {
+            "id": "cc0bbbc7",
+            "startAt": 32169,
+            "endAt": 34364,
+            "text": "근데 화장실 지금 소방호스가 또 터졌어요.",
+            "speaker": 1
+        },
+        {
+            "id": "16541894",
+            "startAt": 34703,
+            "endAt": 36768,
+            "text": "아, 소방 배관이 터진 거예요?",
+            "speaker": 0
+        },
+        {
+            "id": "00e17264",
+            "startAt": 36915,
+            "endAt": 39882,
+            "text": "예, 소방 배관이 들리고요. 화장실에 무슨 배관이 있는데.",
+            "speaker": 1
+        },
+        {
+            "id": "81433b9e",
+            "startAt": 39858,
+            "endAt": 40355,
+            "text": "예.",
+            "speaker": 0
+        },
+        {
+            "id": "e6ad3a5b",
+            "startAt": 41718,
+            "endAt": 42533,
+            "text": "어",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_rkvkmercq8o",
+            "startAt": 43562,
+            "endAt": 44562,
+            "text": "시험 벨브관.",
+            "speaker": 1
+        },
+        {
+            "id": "dcbf5c7c",
+            "startAt": 45418,
+            "endAt": 48572,
+            "text": "어, 그래요? 시험 밸브관이, 관이 그쪽이 터진 거예요?",
+            "speaker": 0
+        },
+        {
+            "id": "49ec68b0",
+            "startAt": 48757,
+            "endAt": 50563,
+            "text": "예예, 지금 화장실 안에 있는 거.",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_r8hgto5eue",
+            "startAt": 50037,
+            "endAt": 52792,
+            "text": "알겠습니다. 저희 드림 프라자로 가면 되겠죠?",
+            "speaker": 0
+        },
+        {
+            "id": "1afb102e",
+            "startAt": 52890,
+            "endAt": 54684,
+            "text": "예, 지금 좀 빨리 와야, 와야 와야겠는데요.",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_r3jivfvmqeo",
+            "startAt": 54664,
+            "endAt": 56637,
+            "text": "예, 저희 차 지금 보내드릴게요.",
+            "speaker": 0
+        },
+        {
+            "id": "773c02e6",
+            "startAt": 56998,
+            "endAt": 57489,
+            "text": "예, ",
+            "speaker": 1
+        },
+        {
+            "id": "wavesurfer_jhblef96tpg",
+            "startAt": 57474,
+            "endAt": 57919,
+            "text": "네.",
+            "speaker": 0
+        }
+    ],
+    "mediaType": "Mobile",
+    "gender": "M",
+    "address": "광주광역시 광산구 신창동",
+    "disasterLarge": "구조",
+    "disasterMedium": "안전사고",
+    "urgencyLevel": "중",
+    "sentiment": "당황/난처",
+    "symptom": [],
+    "triage": ""
+}
