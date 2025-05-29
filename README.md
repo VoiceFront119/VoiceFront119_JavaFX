@@ -82,3 +82,7 @@ WAV 파일 전송 → 변환된 텍스트 반환
 - 개발도구 : Colab pro, PyCharm, Eclipse, Scene Builder, MySQL Workbench
 - 기술스택 : Tensorflow, Pytorch, Whisper-medium, GPT-4 Turbo
 
+---
+## 시연 영상 링크
+https://youtu.be/1cHy2ulUaiY
+
