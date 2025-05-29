@@ -60,18 +60,14 @@
 
 ---
 
-## 🚀 API
-### 기능
-1️⃣ 음성 - 텍스트 변환 (/stt_result)
-
+## 🚀 AI API 기능
+### 1️⃣ 음성 - 텍스트 변환 (/stt_result)
 WAV 파일 전송 → 변환된 텍스트 반환 
 
-2️⃣ 긴급도 분류 (/urgency_classification)
-
+### 2️⃣ 긴급도 분류 (/urgency_classification)
 신고 텍스트 전문 → 상중하 중 한 가지로 반환 
 
-3️⃣ GPT 요약 및 분석 (/gpt_response)
-
+### 3️⃣ GPT 요약 및 분석 (/gpt_response)
 신고 텍스트 전문 → GPT-4 turbo가 요약한 내용 반환 
 <br><br>
 
