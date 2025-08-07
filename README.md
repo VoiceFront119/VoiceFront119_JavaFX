@@ -2,6 +2,12 @@
 
 # ASR 기반 119 음성 신고 지원 시스템
 
+## 🔗 AI 파트 소개 및 코드
+
+**[VoiceFront119_AI Repository](https://github.com/VoiceFront119/VoiceFront119_AI)**
+
+---
+
 ## 🏷️ 개요
 
 ### 현행 시스템의 한계
