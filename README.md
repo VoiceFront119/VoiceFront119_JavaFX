@@ -35,6 +35,13 @@
 <br><br><br>
 ---
 
+## 🛠️ 시스템 구조도
+
+![2  47조_이미지_주요 적용 기술 및 구조](https://github.com/user-attachments/assets/8ae01c9a-3997-4280-8cc6-9496b4455b90)
+
+
+---
+
 ## ⚙️ 주요 기능
 
 ### 🗣️ 1. 구음장애인 고려 ASR 시스템
@@ -78,6 +85,14 @@ WAV 파일 전송 → 변환된 텍스트 반환
 <br><br>
 
 ---
+
+## 🖼️ 작품 소개 사진
+
+![3  47조_이미지_작품 소개 사진](https://github.com/user-attachments/assets/72de0142-f62f-44fb-8a2a-0e9122cd8b66)
+
+
+---
+
 ## 🖥️ 시스템 구성 및 기술 스택
 - 개발환경 : Windows OS, JavaFX, MySQL
 - 개발언어 : Python, Java
